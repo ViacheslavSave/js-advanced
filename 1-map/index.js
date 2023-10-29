@@ -14,6 +14,4 @@ const users = [
 	},
 ];
 
-const usersAllId = users.map((user) => user.id);
-const usersUnique = [];
-new Set(usersAllId).forEach((idUnique) => usersUnique.push(users.find((user) => user.id === idUnique)));
+const unique = new Set(users.map(({id}) => users.find(user => user.id === id)));
