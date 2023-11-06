@@ -1,36 +1,33 @@
 "use strict";
 class Billing {
 	#amount = 10;
-  get amount(){
-    return this.#amount
-  }
-}
 
-class fixBilling extends Billing {
 	calculateTotal() {
-		return this.amount;
+		return this.#amount;
 	}
 }
 
-class hourBilling extends Billing {
+class FixBilling extends Billing {}
+
+class HourBilling extends Billing {
 	hour;
 	constructor(hour) {
 		super();
 		this.hour = hour;
 	}
 	calculateTotal() {
-		return this.amount * this.hour;
+		return super.calculateTotal() * this.hour;
 	}
 }
 
-class itemBilling extends Billing {
+class ItemBilling extends Billing {
 	elem;
 	constructor(elem) {
 		super();
 		this.elem = elem;
 	}
 	calculateTotal() {
-		return this.amount * this.elem;
+		return super.calculateTotal() * this.elem;
 	}
 }
 
@@ -40,6 +37,6 @@ class Result {
 	}
 }
 
-console.log(Result.score(new fixBilling()));
-console.log(Result.score(new hourBilling(50)));
-console.log(Result.score(new itemBilling(100)));
+console.log(Result.score(new FixBilling()));
+console.log(Result.score(new HourBilling(50)));
+console.log(Result.score(new ItemBilling(100)));

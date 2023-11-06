@@ -1,11 +1,11 @@
 "use strict";
-const Person = function (race, name, leng) {
+const Person = function (race, name, lang) {
 	this.race = race;
 	this.name = name;
-	this.leng = leng;
+	this.lang = lang;
 };
 Person.prototype.speak = function () {
-	console.log(`Язык: ${this.leng} Имя: ${this.name}`);
+	console.log(`Язык: ${this.lang} Имя: ${this.name}`);
 };
 
 const Orc = function (name, weapon) {

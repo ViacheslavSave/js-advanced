@@ -2,14 +2,14 @@
 class Person {
 	#race;
 	#name;
-	#leng;
-	constructor(race, name, leng) {
+	#lang;
+	constructor(race, name, lang) {
 		this.#race = race;
 		this.#name = name;
-		this.#leng = leng;
+		this.#lang = lang;
 	}
 	speak() {
-		console.log(`Язык: ${this.#leng} Имя: ${this.#name}`);
+		console.log(`Язык: ${this.#lang} Имя: ${this.#name}`);
 	}
 }
 
