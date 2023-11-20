@@ -11,7 +11,7 @@ function race(arrPromises) {
 		for (const fetch of arrPromises) {
 			fetch.then((response) => {
 				if (response.ok) {
-					response.json().then(resolve);
+					resolve(response.json());
 				} else {
 					reject(`Status: ${response.status}`);
 				}

@@ -1,18 +1,17 @@
 "use strict";
-const resultCounterHTML = document.querySelector(".result__counter");
-const resultButtonsHTML = document.querySelectorAll(".result__buttons > Button");
+const resultCounterHTML = document.querySelector(".result__count");
+const resultButtonsBlockHTML = document.querySelector(".result__buttons");
+const resultButtonsHTML = resultButtonsBlockHTML.querySelectorAll("Button");
 let counter = 0;
 
-document.addEventListener("click", (e) => {
-	if (e.target.nodeName === "BUTTON" && e.target.closest(".result__buttons")) {
+resultButtonsBlockHTML.addEventListener("click", (e) => {
+	if (e.target.nodeName === "BUTTON") {
 		clicker(e);
 	}
 });
 
 function clicker(e) {
 	resultCounterHTML.innerText = `Количество нажатий = ${++counter}`;
-	resultButtonsHTML.forEach((button) => {
-		button.innerText = "Нажми меня";
-	});
+	resultButtonsHTML.forEach((button) => (button.innerText = "Нажми меня"));
 	e.target.innerText = "Нажата!";
 }
